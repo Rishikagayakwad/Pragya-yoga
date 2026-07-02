@@ -1,0 +1,69 @@
+.featured{
+    padding:80px 60px;
+    background:white;
+    text-align:center;
+}
+
+.featured h2{
+    font-size:40px;
+    color:#1b4332;
+    margin-bottom:10px;
+}
+
+.featured p{
+    color:#666;
+    margin-bottom:40px;
+}
+
+.asana-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.asana-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.asana-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.asana-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    color:#1b4332;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    margin:8px 0;
+}
+
+.card-content button{
+    margin-top:15px;
+    background:#2d6a4f;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card-content button:hover{
+    background:#1b4332;
+}
