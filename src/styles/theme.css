@@ -1,0 +1,22 @@
+:root{
+
+--primary:#F2140D;
+--secondary:#BC0101;
+--accent:#F8B53C;
+--yellow:#FFF000;
+
+--background:#FFF8F5;
+--card:#FFFFFF;
+
+--text:#222222;
+--light:#666666;
+
+--border:#E6E6E6;
+
+--radius:18px;
+
+--shadow:0 15px 40px rgba(0,0,0,.08);
+
+--transition:.35s ease;
+
+}

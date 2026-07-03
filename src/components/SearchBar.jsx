@@ -1,46 +1,31 @@
 import "./SearchBar.css";
+import { FiSearch } from "react-icons/fi";
 
-function SearchBar() {
+function SearchBar({ searchTerm, setSearchTerm }) {
   return (
     <section className="search-section">
+      <div className="search-container">
+        <h2>Find Your Perfect Yoga Asana</h2>
+        <p>
+          Search from our collection of yoga poses and begin your wellness
+          journey.
+        </p>
 
-      <h2>Find Your Perfect Yoga Asana</h2>
+        <div className="search-box">
+          <FiSearch className="search-icon" />
 
-      <p>
-        Search by name, category, or difficulty level.
-      </p>
-
-      <div className="search-box">
-
-        <input
-          type="text"
-          placeholder="🔍 Search Yoga Asana..."
-        />
-
-        <select>
-          <option>All Categories</option>
-          <option>Standing</option>
-          <option>Sitting</option>
-          <option>Balance</option>
-          <option>Meditation</option>
-          <option>Backbend</option>
-        </select>
-
-        <select>
-          <option>Difficulty</option>
-          <option>Beginner</option>
-          <option>Intermediate</option>
-          <option>Advanced</option>
-        </select>
-
-        <button>
-          Search
-        </button>
-
+          <input
+            type="text"
+            placeholder="Search yoga poses..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
-
     </section>
   );
 }
+
+
 
 export default SearchBar;

@@ -6,6 +6,22 @@
     box-sizing:border-box;
 }
 
+@font-face {
+    font-family: "Barmeno";
+    src: url("/fonts/Barmeno-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Barmeno";
+    src: url("/fonts/Barmeno-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+body{
+    font-family: "Barmeno", sans-serif;
+}
+
 .navbar{
 
     display:flex;
@@ -42,7 +58,7 @@
 
 .logo h2{
     font-size:28px;
-    color:#2d6a4f;
+    color: rgb(216, 135, 21);
 }
 
 .nav-links{
@@ -59,7 +75,7 @@
 
     text-decoration:none;
 
-    color:#333;
+    color:#ac6b1b;
 
     font-size:18px;
 
@@ -69,13 +85,13 @@
 
 .nav-links a:hover{
 
-    color:#2d6a4f;
+    color:orange;
 
 }
 
 .login-btn{
 
-    background:#2d6a4f;
+    background: rgb(216, 135, 21);
 
     color:white;
 
@@ -95,7 +111,7 @@
 
 .login-btn:hover{
 
-    background:#1b4332;
+    background:orange;
 
 }
 /* Tablet */

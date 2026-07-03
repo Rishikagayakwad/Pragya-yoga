@@ -5,6 +5,7 @@ import Categories from "./components/Categories";
 import FeaturedAsanas from "./components/FeaturedAsanas";
 import Footer from "./components/Footer";
 
+
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       <Categories />
       <FeaturedAsanas />
       <Footer />
+      
     </>
   );
 }

@@ -6,7 +6,7 @@
 
 .featured h2{
     font-size:40px;
-    color:#1b4332;
+    color: rgb(216, 135, 21);
     margin-bottom:10px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .card-content h3{
-    color:#1b4332;
+    color:  rgb(216, 135, 21);
     margin-bottom:10px;
 }
 
@@ -55,7 +55,7 @@
 
 .card-content button{
     margin-top:15px;
-    background:#2d6a4f;
+    background:rgb(216, 145, 14);
     color:white;
     border:none;
     padding:12px 25px;

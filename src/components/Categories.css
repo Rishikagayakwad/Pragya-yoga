@@ -1,12 +1,12 @@
 .categories{
     padding:80px 60px;
-    background:#f8fff5;
+    background:#ffffff;
     text-align:center;
 }
 
 .categories h2{
     font-size:40px;
-    color:#1b4332;
+    color:rgb(216, 135, 21);
     margin-bottom:10px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .category-card h3{
-    color:#1b4332;
+    color: rgb(216, 135, 21);
     margin-bottom:10px;
     font-size:24px;
 }
@@ -53,7 +53,7 @@
 }
 
 .category-card button{
-    background:#2d6a4f;
+    background: rgb(216, 135, 21);
     color:white;
     border:none;
     padding:12px 25px;
@@ -63,5 +63,5 @@
 }
 
 .category-card button:hover{
-    background:#1b4332;
+    background:orange;
 }
