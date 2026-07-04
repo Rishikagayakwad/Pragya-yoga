@@ -1,0 +1,163 @@
+-- =====================================================================
+-- PRAGYA YOGA VERSE — RELATIONAL DATABASE SCHEMA
+-- =====================================================================
+-- Project        : Pragya Yoga Verse (Project 1)
+-- Deliverable    : Deliverable 1 — Core Database Schema
+-- Compatibility  : MySQL 8.0+ / PostgreSQL 13+
+-- Normal Form    : 3NF (Third Normal Form)
+-- Source of Truth: Master Asana Database Workbook (v1.1.1) — content is
+--                  NOT regenerated here; this file only defines structure.
+-- Notes          : Statements below use ANSI-friendly, cross-dialect SQL.
+--                  Where MySQL and PostgreSQL syntax genuinely diverge
+--                  (AUTO_INCREMENT vs SERIAL, ENGINE clause, etc.), the
+--                  MySQL form is used as the primary statement and the
+--                  PostgreSQL equivalent is provided as a commented note
+--                  directly beneath it.
+-- =====================================================================
+
+
+-- =====================================================================
+-- TABLE 1: CATEGORIES
+-- ---------------------------------------------------------------------
+-- Purpose: Lookup/reference table storing the distinct yoga pose
+-- classifications (Standing, Sitting, Prone, Supine, Balance, Twisting,
+-- Forward Bend, Backbend, Inversion, Meditative). Normalizing category
+-- into its own table avoids repeating category text on every asana row
+-- and allows category metadata (e.g., description) to be updated in a
+-- single place. Must be created first since ASANAS references it.
+-- =====================================================================
+CREATE TABLE Categories (
+    category_id     INT AUTO_INCREMENT PRIMARY KEY,        -- PostgreSQL: category_id SERIAL PRIMARY KEY
+    category_name   VARCHAR(50)  NOT NULL,                 -- e.g., 'Standing', 'Forward Bend'
+    description     TEXT,                                  -- Short explanation of the classification
+    created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+                        ON UPDATE CURRENT_TIMESTAMP,        -- PostgreSQL: use a trigger to auto-update this column
+    CONSTRAINT uq_category_name UNIQUE (category_name)      -- Prevents duplicate category entries
+);
+
+-- Index: speeds up lookups/joins filtering or sorting by category name
+CREATE INDEX idx_categories_name ON Categories (category_name);
+
+
+-- =====================================================================
+-- TABLE 2: ASANAS
+-- ---------------------------------------------------------------------
+-- Purpose: Core entity table storing one row per yoga pose (asana).
+-- asana_id reuses the existing natural identifier from the Master Asana
+-- Workbook (e.g., 'AS001') so the database stays traceable to the
+-- approved source-of-truth spreadsheet rather than generating new keys.
+-- category_id is a foreign key into Categories (many asanas -> one
+-- category), which removes repeated category text from this table and
+-- satisfies 2NF/3NF by keeping classification data in its own table.
+-- =====================================================================
+CREATE TABLE Asanas (
+    asana_id            VARCHAR(10)  PRIMARY KEY,          -- Natural key from Master Asana List, e.g. 'AS001'
+    category_id         INT          NOT NULL,             -- FK -> Categories.category_id
+    sanskrit_name        VARCHAR(150) NOT NULL,             -- e.g., 'Tadasana'
+    english_name          VARCHAR(150) NOT NULL,             -- e.g., 'Mountain Pose'
+    difficulty            VARCHAR(20)  NOT NULL,             -- 'Beginner' | 'Intermediate' | 'Advanced'
+    description           TEXT,                              -- Narrative summary of the pose
+    steps                 TEXT,                              -- Ordered step-by-step instructions (source text preserved)
+    muscles_targeted      TEXT,                              -- Comma-separated / free-text muscle groups engaged
+    common_mistakes       TEXT,                              -- Frequently observed alignment/technique errors
+    variations             TEXT,                              -- Known pose variations or modifications
+    created_at            TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at            TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+                              ON UPDATE CURRENT_TIMESTAMP,     -- PostgreSQL: use a trigger to auto-update this column
+
+    CONSTRAINT fk_asanas_category
+        FOREIGN KEY (category_id) REFERENCES Categories (category_id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,                                   -- Prevents deleting a category still in use
+
+    CONSTRAINT chk_asanas_difficulty
+        CHECK (difficulty IN ('Beginner', 'Intermediate', 'Advanced')),
+
+    CONSTRAINT uq_asanas_sanskrit_name UNIQUE (sanskrit_name)  -- Avoids duplicate pose entries
+);
+
+-- Indexes: support common query patterns (filter by category, difficulty,
+-- and text search by name) without scanning the full table
+CREATE INDEX idx_asanas_category_id   ON Asanas (category_id);
+CREATE INDEX idx_asanas_difficulty    ON Asanas (difficulty);
+CREATE INDEX idx_asanas_english_name  ON Asanas (english_name);
+
+
+-- =====================================================================
+-- TABLE 3: BENEFITS
+-- ---------------------------------------------------------------------
+-- Purpose: Stores individual benefit statements linked to an asana.
+-- Modeled as a child table (one-to-many) instead of a repeating text
+-- blob or comma-separated column inside Asanas, which is required for
+-- 1NF (atomic values) and makes each benefit individually queryable,
+-- filterable, and editable.
+-- =====================================================================
+CREATE TABLE Benefits (
+    benefit_id      INT AUTO_INCREMENT PRIMARY KEY,        -- PostgreSQL: benefit_id SERIAL PRIMARY KEY
+    asana_id        VARCHAR(10) NOT NULL,                  -- FK -> Asanas.asana_id
+    benefit         TEXT NOT NULL,                         -- A single benefit statement
+    created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_benefits_asana
+        FOREIGN KEY (asana_id) REFERENCES Asanas (asana_id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE                                  -- Remove benefits automatically if parent asana is removed
+);
+
+-- Index: every lookup of "benefits for this asana" filters on asana_id
+CREATE INDEX idx_benefits_asana_id ON Benefits (asana_id);
+
+
+-- =====================================================================
+-- TABLE 4: PRECAUTIONS
+-- ---------------------------------------------------------------------
+-- Purpose: Stores individual precaution/contraindication statements
+-- linked to an asana. Same one-to-many rationale as Benefits: keeps
+-- each precaution atomic, independently queryable, and normalized.
+-- =====================================================================
+CREATE TABLE Precautions (
+    precaution_id   INT AUTO_INCREMENT PRIMARY KEY,        -- PostgreSQL: precaution_id SERIAL PRIMARY KEY
+    asana_id        VARCHAR(10) NOT NULL,                  -- FK -> Asanas.asana_id
+    precaution      TEXT NOT NULL,                         -- A single precaution/contraindication statement
+    created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_precautions_asana
+        FOREIGN KEY (asana_id) REFERENCES Asanas (asana_id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+
+-- Index: every lookup of "precautions for this asana" filters on asana_id
+CREATE INDEX idx_precautions_asana_id ON Precautions (asana_id);
+
+
+-- =====================================================================
+-- TABLE 5: CHAKRA_INFORMATION
+-- ---------------------------------------------------------------------
+-- Purpose: Stores the chakra(s) associated with an asana. An asana may
+-- relate to one or more chakras (many-to-many in spirit), so this is
+-- modeled as a child table keyed by asana_id rather than a fixed
+-- chakra column on Asanas, keeping the schema normalized and extensible
+-- if chakra reference data (name, description, color) is added later.
+-- =====================================================================
+CREATE TABLE Chakra_Information (
+    chakra_id       INT AUTO_INCREMENT PRIMARY KEY,        -- PostgreSQL: chakra_id SERIAL PRIMARY KEY
+    asana_id        VARCHAR(10) NOT NULL,                  -- FK -> Asanas.asana_id
+    chakra_name     VARCHAR(100) NOT NULL,                 -- e.g., 'Root Chakra (Muladhara)'
+    created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_chakra_asana
+        FOREIGN KEY (asana_id) REFERENCES Asanas (asana_id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+
+    CONSTRAINT uq_chakra_asana_name UNIQUE (asana_id, chakra_name)  -- Prevents duplicate chakra entries per asana
+);
+
+-- Index: every lookup of "chakras for this asana" filters on asana_id
+CREATE INDEX idx_chakra_asana_id ON Chakra_Information (asana_id);
+
+-- =====================================================================
+-- END OF SCHEMA — No INSERT statements or sample data included.
+-- =====================================================================
