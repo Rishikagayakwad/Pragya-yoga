@@ -1,0 +1,33 @@
+     table_name     | count 
+--------------------+-------
+ Categories         |     6
+ Asanas             |    20
+ Benefits           |   100
+ Precautions        |    80
+ Chakra_Information |    20
+(5 rows)
+
+ asana_id |     sanskrit_name     | category_name | benefit_count | precaution_count 
+----------+-----------------------+---------------+---------------+------------------
+ AS001    | Tadasana              | Standing      |             5 |                4
+ AS002    | Sukhasana             | Meditative    |             5 |                4
+ AS003    | Vajrasana             | Sitting       |             5 |                4
+ AS004    | Swastikasana          | Meditative    |             5 |                4
+ AS005    | Siddhasana            | Meditative    |             5 |                4
+ AS006    | Dandasana             | Sitting       |             5 |                4
+ AS007    | Uttanasana            | Forward Bend  |             5 |                4
+ AS008    | Ardha Uttanasana      | Forward Bend  |             5 |                4
+ AS009    | Padangusthasana       | Forward Bend  |             5 |                4
+ AS010    | Padahastasana         | Forward Bend  |             5 |                4
+ AS011    | Malasana              | Standing      |             5 |                4
+ AS012    | Utkata Konasana       | Standing      |             5 |                4
+ AS013    | Utkatasana            | Standing      |             5 |                4
+ AS014    | Parivrtta Utkatasana  | Twisting      |             5 |                4
+ AS015    | Anjaneyasana          | Standing      |             5 |                4
+ AS016    | Virabhadrasana I      | Standing      |             5 |                4
+ AS017    | Virabhadrasana II     | Standing      |             5 |                4
+ AS018    | Virabhadrasana III    | Balance       |             5 |                4
+ AS019    | Trikonasana           | Standing      |             5 |                4
+ AS020    | Parivrtta Trikonasana | Twisting      |             5 |                4
+(20 rows)
+
