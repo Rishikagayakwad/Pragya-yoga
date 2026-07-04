@@ -1,0 +1,95 @@
+.asana-hero{
+
+padding:120px 8%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+background:#FFF8F3;
+
+}
+
+.asana-left img{
+
+width:100%;
+
+border-radius:25px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+.level{
+
+display:inline-block;
+
+background:#103498;
+
+color:white;
+
+padding:8px 20px;
+
+border-radius:30px;
+
+margin-bottom:20px;
+
+font-weight:600;
+
+}
+
+.asana-right h1{
+
+font-size:56px;
+
+color:rgb(246, 161, 4);
+
+margin-bottom:20px;
+
+}
+
+.asana-right p{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-bottom:40px;
+
+}
+
+.stats{
+
+display:flex;
+
+gap:25px;
+
+}
+
+.stats div{
+
+background:white;
+
+padding:20px;
+
+border-radius:18px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+flex:1;
+
+text-align:center;
+
+}
+
+.stats h3{
+
+color:rgb(229, 152, 9);
+
+margin-bottom:10px;
+
+}

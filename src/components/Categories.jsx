@@ -36,8 +36,7 @@ function Categories() {
   ];
 
   return (
-    <section className="categories">
-
+    <section id="categories" className="categories">
       <h2>Explore Yoga Categories</h2>
 
       <p>

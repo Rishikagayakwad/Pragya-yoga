@@ -20,7 +20,7 @@ function Footer() {
             <li>Home</li>
             <li>Categories</li>
             <li>Asanas</li>
-            <li>Contact</li>
+           
             <li>About</li>
           </ul>
         </div>

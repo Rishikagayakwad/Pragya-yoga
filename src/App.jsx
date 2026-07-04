@@ -1,22 +1,31 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import SearchBar from "./components/SearchBar";
-import Categories from "./components/Categories";
-import FeaturedAsanas from "./components/FeaturedAsanas";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Home from "./pages/Home";
+import Search from "./pages/Search";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import AsanaDetails from "./pages/AsanaDetails";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <SearchBar />
-      <Categories />
-      <FeaturedAsanas />
-      <Footer />
-      
-    </>
+    <BrowserRouter>
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+
+        <Route path="/search" element={<Search />} />
+
+        <Route path="/about" element={<About />} />
+
+        <Route path="/contact" element={<Contact />} />
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/asana/:id" element={<AsanaDetails />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

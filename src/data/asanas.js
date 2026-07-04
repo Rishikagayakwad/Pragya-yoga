@@ -1,58 +1,82 @@
-import tree from "../assets/asanas/tree.png";
 import lotus from "../assets/asanas/lotus.png";
+import tree from "../assets/asanas/tree.png";
 import cobra from "../assets/asanas/cobra.png";
-import warrior from "../assets/asanas/warrior.png";
-import bridge from "../assets/asanas/bridge.png";
-import triangle from "../assets/asanas/triangle.png";
 
 const asanas = [
   {
     id: 1,
-    name: "Tree Pose",
-    category: "Standing",
-    level: "Beginner",
-    duration: "30 sec",
-    image: tree,
-  },
-  {
-    id: 2,
+    slug: "lotus",
     name: "Lotus Pose",
+    image: lotus,
     category: "Meditation",
     level: "Beginner",
     duration: "5 min",
-    image: lotus,
+
+    overview:
+      "Lotus Pose (Padmasana) is a classic seated yoga pose that promotes meditation and relaxation.",
+
+    benefits: [
+      "Improves flexibility",
+      "Calms the mind",
+      "Improves posture",
+      "Enhances concentration",
+    ],
+
+    steps: [
+      "Sit on the mat.",
+      "Cross your legs comfortably.",
+      "Place each foot on the opposite thigh.",
+      "Keep your spine straight.",
+      "Take slow deep breaths.",
+    ],
+
+    precautions: [
+      "Avoid if you have knee injuries.",
+      "Do not force your hips.",
+      "Practice slowly if you are a beginner.",
+    ],
+
+    model: "/models/yoga.glb",
   },
+
+  {
+    id: 2,
+    slug: "tree",
+    name: "Tree Pose",
+    image: tree,
+    category: "Balance",
+    level: "Beginner",
+    duration: "3 min",
+
+    overview: "Tree Pose improves balance and concentration.",
+
+    benefits: ["Balance", "Focus", "Strength"],
+
+    steps: ["Stand", "Lift one leg", "Join palms"],
+
+    precautions: ["Avoid if dizzy"],
+
+    model: "/models/yoga.glb",
+  },
+
   {
     id: 3,
+    slug: "cobra",
     name: "Cobra Pose",
-    category: "Backbend",
-    level: "Intermediate",
-    duration: "45 sec",
     image: cobra,
-  },
-  {
-    id: 4,
-    name: "Warrior Pose",
-    category: "Standing",
-    level: "Intermediate",
-    duration: "60 sec",
-    image: warrior,
-  },
-  {
-    id: 5,
-    name: "Bridge Pose",
     category: "Backbend",
-    level: "Advanced",
-    duration: "40 sec",
-    image: bridge,
-  },
-  {
-    id: 6,
-    name: "Triangle Pose",
-    category: "Standing",
-    level: "Beginner",
-    duration: "45 sec",
-    image: triangle,
+    level: "Intermediate",
+    duration: "2 min",
+
+    overview: "Cobra Pose strengthens the back.",
+
+    benefits: ["Back Strength", "Flexibility"],
+
+    steps: ["Lie down", "Lift chest"],
+
+    precautions: ["Avoid during pregnancy"],
+
+    model: "/models/yoga.glb",
   },
 ];
 

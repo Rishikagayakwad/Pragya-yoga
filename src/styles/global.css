@@ -20,6 +20,8 @@ background:var(--background);
 
 color:var(--text);
 
+    padding-top:90px;
+
 }
 
 a{

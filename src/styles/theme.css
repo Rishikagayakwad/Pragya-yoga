@@ -1,22 +1,66 @@
 :root{
 
 --primary:#F2140D;
---secondary:#BC0101;
---accent:#F8B53C;
---yellow:#FFF000;
+--primary-dark:#BC0101;
 
---background:#FFF8F5;
---card:#FFFFFF;
+--yellow:#FFF100;
+--orange:#FDB431;
 
---text:#222222;
---light:#666666;
+--background:#FFF8F3;
+--surface:#FFFFFF;
 
---border:#E6E6E6;
+--text:#2C2C2C;
+--text-light:#666666;
 
 --radius:18px;
 
---shadow:0 15px 40px rgba(0,0,0,.08);
+--shadow:0 15px 35px rgba(0,0,0,.08);
 
---transition:.35s ease;
+--transition:.35s;
+
+}
+
+:root{
+
+  /* Logo Color Palette */
+
+  --primary:#F2140D;
+  --primary-dark:#BC0101;
+
+  --secondary:#FDB431;
+
+  --accent:#FFF100;
+
+  --background:#FFF8F3;
+
+  --card:#FFFFFF;
+
+  --text:#2D2D2D;
+
+  --gray:#7D7D7D;
+
+  --border:#ECECEC;
+
+  --shadow:0 15px 35px rgba(0,0,0,.08);
+
+  --radius:20px;
+
+  --transition:.35s ease;
+
+}
+
+/* Dark Theme */
+
+.dark{
+
+  --background:#111111;
+
+  --card:#1E1E1E;
+
+  --text:#FFFFFF;
+
+  --gray:#BBBBBB;
+
+  --border:#333333;
 
 }
