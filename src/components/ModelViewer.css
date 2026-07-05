@@ -1,0 +1,41 @@
+.model-section{
+
+padding:80px 8%;
+
+background:white;
+
+text-align:center;
+
+}
+
+.model-section h2{
+
+font-size:42px;
+
+color:#e88f0a;
+
+margin-bottom:40px;
+
+}
+
+.viewer{
+
+height:500px;
+
+border-radius:25px;
+
+background:linear-gradient(135deg,#FFF8F3,#FFF100);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:32px;
+
+font-weight:bold;
+
+color:rgb(222, 150, 17);
+
+}

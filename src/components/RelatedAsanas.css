@@ -1,0 +1,23 @@
+.related-asanas{
+  padding:80px 8%;
+}
+
+.related-asanas h2{
+  text-align:center;
+  color:rgb(216, 144, 9);
+  margin-bottom:40px;
+}
+
+.related-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.related-card{
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
