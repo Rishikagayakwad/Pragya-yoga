@@ -40,8 +40,7 @@ function AsanaDetails() {
 
       <AsanaHero asana={asana} />
 
-      <ModelViewer model={asana.model} />
-
+<ModelViewer modelPath={asana.model} />
       <AsanaTabs asana={asana} />
 
       <RelatedAsanas current={asana.slug} />
