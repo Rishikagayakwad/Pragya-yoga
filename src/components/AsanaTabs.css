@@ -7,3 +7,54 @@
     color:#e69812;
     margin-bottom:20px;
 }
+
+.tab-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.tab-button{
+    padding:10px 22px;
+    border-radius:999px;
+    border:1px solid #e69812;
+    background:transparent;
+    color:#e69812;
+    font-weight:600;
+    cursor:pointer;
+    transition:background 0.2s ease, color 0.2s ease;
+}
+
+.tab-button:hover{
+    background:#fdf1de;
+}
+
+.tab-button.active{
+    background:#e69812;
+    color:#fff;
+}
+
+.tab-panel{
+    max-width:720px;
+    margin:0 auto;
+    text-align:left;
+}
+
+.tab-text{
+    line-height:1.7;
+    color:#333;
+}
+
+.tab-list{
+    list-style:disc;
+    padding-left:20px;
+    line-height:1.8;
+    color:#333;
+}
+
+.tab-empty{
+    color:#888;
+    font-style:italic;
+}
