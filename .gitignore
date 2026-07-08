@@ -25,3 +25,5 @@ dist-ssr
 
 .env
 backend/.env
+public/models/*-backup.glb
+public/models/*-test.glb
