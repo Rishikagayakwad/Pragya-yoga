@@ -91,7 +91,7 @@ function AsanaDetails() {
       {/* TODO (Day 6): Asanas table has no per-asana model path yet, so all
           asanas share the Day 4 placeholder model. Swap in real per-asana
           models once sourced. */}
-      <ModelViewer modelPath="/models/yoga.glb" />
+      <ModelViewer modelPath="/models/tree-pose-real.glb" />
 
       <AsanaTabs asana={asana} />
 
