@@ -88,10 +88,12 @@ function AsanaDetails() {
 
       <AsanaHero asana={asana} />
 
-      {/* TODO (Day 6): Asanas table has no per-asana model path yet, so all
-          asanas share the Day 4 placeholder model. Swap in real per-asana
-          models once sourced. */}
-      <ModelViewer modelPath="/models/tree-pose-real.glb" />
+     {/* Only Tree Pose has a real sourced model so far (Day 7). Every other
+          asana falls back to ModelViewer's default placeholder until more
+          per-asana models are sourced. */}
+      <ModelViewer
+        modelPath={asana.slug === "tree" ? "/models/tree-pose-real.glb" : undefined}
+      />
 
       <AsanaTabs asana={asana} />
 

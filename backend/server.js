@@ -30,6 +30,23 @@ app.get('/api/asanas', async (req, res) => {
     res.status(500).json({ error: 'Something went wrong fetching asanas' });
   }
 });
+// FEATURED ASANAS API
+// GET /api/asanas/featured — curated set of poses that have real local images
+app.get('/api/asanas/featured', async (req, res) => {
+  try {
+const featuredSlugs = ['tree', 'lotus', 'triangle', 'warrior-i'];
+    const result = await pool.query(
+      `SELECT asana_id, sanskrit_name, english_name, difficulty, slug, duration
+       FROM Asanas
+       WHERE slug = ANY($1)`,
+      [featuredSlugs]
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Database query error:', err.message);
+    res.status(500).json({ error: 'Something went wrong fetching featured asanas' });
+  }
+});
 // CATEGORY API
 // GET /api/categories — list all categories
 app.get('/api/categories', async (req, res) => {

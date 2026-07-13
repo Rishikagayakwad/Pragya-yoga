@@ -23,6 +23,10 @@ export function getAsanaBySlug(slug) {
   return fetchJson(`/asanas/${slug}`);
 }
 
-// TODO (Day 6): add getAllAsanas(), getFeaturedAsanas(), searchAsanas(),
-// getAsanasByCategory() here once FeaturedAsanas/Search/Categories are
-// migrated off the static src/data/asanas.js file.
+// GET /api/asanas/featured — curated set of poses with real local images
+export function getFeaturedAsanas() {
+  return fetchJson("/asanas/featured");
+}
+
+// TODO: add getAllAsanas(), searchAsanas(), getAsanasByCategory() here
+// once Search/Categories are migrated off the static src/data/asanas.js file.
