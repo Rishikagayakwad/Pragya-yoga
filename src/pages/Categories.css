@@ -1,0 +1,1422 @@
+/* =====================================================
+   PRAGYA YOGA VERSE
+   CATEGORIES PAGE
+====================================================== */
+
+/* Google Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
+
+/* =====================================================
+   ROOT COLORS
+====================================================== */
+
+:root{
+
+    --primary:#D97706;
+
+    --primary-dark:#B45309;
+
+    --primary-light:#FBBF24;
+
+    --green:#2F855A;
+
+    --green-light:#ECFDF5;
+
+    --background:#FFFDF8;
+
+    --card:#ffffff;
+
+    --text:#222222;
+
+    --text-light:#6B7280;
+
+    --border:#EFE5D4;
+
+    --shadow:
+    0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/* =====================================================
+   RESET
+====================================================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:"Inter",sans-serif;
+
+background:var(--background);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+}
+
+/* =====================================================
+   PAGE
+====================================================== */
+
+.categories-page{
+
+width:100%;
+
+background:var(--background);
+
+}
+
+/* =====================================================
+   HERO
+====================================================== */
+
+.categories-hero{
+
+padding:90px 8%;
+
+text-align:center;
+
+background:
+linear-gradient(
+180deg,
+#FFF8EC 0%,
+#FFFDF8 60%,
+#ffffff 100%
+);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* Decorative circles */
+
+.categories-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:#FFE9B5;
+
+border-radius:50%;
+
+top:-180px;
+
+left:-120px;
+
+opacity:.45;
+
+}
+
+.categories-hero::after{
+
+content:"";
+
+position:absolute;
+
+width:260px;
+
+height:260px;
+
+background:#E8F8EE;
+
+border-radius:50%;
+
+right:-80px;
+
+bottom:-80px;
+
+opacity:.6;
+
+}
+
+/* Tag */
+
+.hero-tag{
+
+display:inline-block;
+
+padding:10px 22px;
+
+background:#FFF2D8;
+
+border-radius:50px;
+
+font-size:15px;
+
+font-weight:600;
+
+color:var(--primary);
+
+letter-spacing:1px;
+
+margin-bottom:25px;
+
+z-index:10;
+
+position:relative;
+
+}
+
+/* Heading */
+
+.categories-hero h1{
+
+font-family:"Poppins",sans-serif;
+
+font-size:62px;
+
+font-weight:700;
+
+color:#1f2937;
+
+margin-bottom:20px;
+
+position:relative;
+
+z-index:10;
+
+}
+
+/* Description */
+
+.categories-hero p{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#6B7280;
+
+position:relative;
+
+z-index:10;
+
+}
+
+/* =====================================================
+   SECTION TITLE
+====================================================== */
+
+.section-title{
+
+text-align:center;
+
+margin-top:90px;
+
+margin-bottom:55px;
+
+}
+
+.section-title h2{
+
+font-family:"Poppins";
+
+font-size:48px;
+
+font-weight:700;
+
+color:#222;
+
+}
+
+.section-title p{
+
+margin-top:15px;
+
+font-size:18px;
+
+color:#777;
+
+}
+
+/* =====================================================
+   GRID
+====================================================== */
+
+.categories-grid{
+
+width:90%;
+
+max-width:1400px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:32px;
+
+padding-bottom:90px;
+
+}
+
+/* =====================================================
+   CARD
+====================================================== */
+
+.category-card{
+
+background:white;
+
+border-radius:28px;
+
+padding:40px 30px;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+transition:.4s ease;
+
+cursor:pointer;
+
+}
+
+/* Top gradient */
+
+.category-card::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:6px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#FBBF24,
+
+#D97706,
+
+#B45309
+
+);
+
+transform:scaleX(0);
+
+transition:.4s;
+
+transform-origin:left;
+
+}
+
+.category-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.category-card:hover{
+
+transform:
+
+translateY(-12px);
+
+box-shadow:
+
+0 22px 55px rgba(217,119,6,.15);
+
+border-color:#FBBF24;
+
+}
+/* =====================================================
+   CATEGORY ICON
+====================================================== */
+
+.category-icon{
+
+    width:100px;
+
+    height:100px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    background:linear-gradient(
+    135deg,
+    #FFF8E1,
+    #FFE5A8
+    );
+
+    color:#D97706;
+
+    transition:.4s ease;
+
+    box-shadow:
+    0 10px 25px rgba(217,119,6,.12);
+
+}
+
+.category-card:hover .category-icon{
+
+    transform:
+    rotate(8deg)
+    scale(1.12);
+
+    background:linear-gradient(
+    135deg,
+    #FBBF24,
+    #F59E0B,
+    #D97706
+    );
+
+    color:white;
+
+    box-shadow:
+    0 18px 35px rgba(217,119,6,.28);
+
+}
+
+/* =====================================================
+   TITLE
+====================================================== */
+
+.category-card h2{
+
+    margin-top:28px;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#222;
+
+    transition:.3s;
+
+}
+
+.category-card:hover h2{
+
+    color:#D97706;
+
+}
+
+/* =====================================================
+   ASANA COUNT
+====================================================== */
+
+.category-card span{
+
+    display:inline-block;
+
+    margin-top:14px;
+
+    margin-bottom:20px;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    background:#FFF4DE;
+
+    color:#D97706;
+
+    font-weight:600;
+
+    font-size:15px;
+
+}
+
+/* =====================================================
+   DESCRIPTION
+====================================================== */
+
+.category-card p{
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+    margin-bottom:35px;
+
+}
+
+/* =====================================================
+   EXPLORE BUTTON
+====================================================== */
+
+.category-card button{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:15px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-family:"Poppins";
+
+    font-size:16px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #FBBF24,
+    #D97706,
+    #B45309
+    );
+
+    transition:.35s;
+
+    box-shadow:
+    0 12px 25px rgba(217,119,6,.20);
+
+}
+
+/* =====================================================
+   BUTTON ICON
+====================================================== */
+
+.category-card button svg{
+
+    transition:.35s;
+
+}
+
+/* =====================================================
+   BUTTON HOVER
+====================================================== */
+
+.category-card button:hover{
+
+    transform:translateY(-3px);
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #FFD54F,
+    #F59E0B,
+    #D97706
+    );
+
+    box-shadow:
+    0 18px 35px rgba(180,83,9,.35);
+
+}
+
+.category-card button:hover svg{
+
+    transform:translateX(6px);
+
+}
+
+/* =====================================================
+   CARD GLOW
+====================================================== */
+
+.category-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:200px;
+
+    height:200px;
+
+    background:
+
+    radial-gradient(
+    rgba(251,191,36,.25),
+    transparent 70%
+    );
+
+    top:-90px;
+
+    right:-90px;
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.category-card:hover::after{
+
+    opacity:1;
+
+}
+
+/* =====================================================
+   SMALL MICRO ANIMATION
+====================================================== */
+
+.category-card{
+
+    animation:fadeUp .6s ease both;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =====================================================
+   FEATURED CATEGORY SECTION
+====================================================== */
+
+.featured-category{
+
+    width:90%;
+
+    max-width:1350px;
+
+    margin:80px auto;
+
+    padding:70px;
+
+    border-radius:35px;
+
+    background:linear-gradient(
+    135deg,
+    #FFF8EC,
+    #FFFFFF
+    );
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:60px;
+
+    box-shadow:
+    0 20px 55px rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/* Decorative background */
+
+.featured-category::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    background:#FFE9BF;
+
+    border-radius:50%;
+
+    right:-120px;
+
+    top:-120px;
+
+    opacity:.35;
+
+}
+
+.featured-category::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:#ECFDF5;
+
+    border-radius:50%;
+
+    left:-80px;
+
+    bottom:-80px;
+
+    opacity:.6;
+
+}
+
+/* LEFT CONTENT */
+
+.featured-left{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.featured-left span{
+
+    display:inline-block;
+
+    padding:8px 20px;
+
+    background:#FFF2D8;
+
+    color:#D97706;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    margin-bottom:22px;
+
+}
+
+.featured-left h2{
+
+    font-family:"Poppins";
+
+    font-size:48px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:22px;
+
+}
+
+.featured-left p{
+
+    color:#6B7280;
+
+    line-height:1.9;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+}
+
+/* BENEFITS */
+
+.featured-left ul{
+
+    list-style:none;
+
+    margin-bottom:35px;
+
+}
+
+.featured-left li{
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+    color:#444;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.featured-left li::before{
+
+    content:"✔";
+
+    width:28px;
+
+    height:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#D97706;
+
+    color:white;
+
+    font-size:14px;
+
+    flex-shrink:0;
+
+}
+
+/* BUTTON */
+
+.featured-left button{
+
+    padding:16px 36px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-family:"Poppins";
+
+    font-size:17px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+    135deg,
+    #FBBF24,
+    #D97706,
+    #B45309
+    );
+
+    transition:.35s;
+
+    box-shadow:
+    0 14px 30px rgba(217,119,6,.22);
+
+}
+
+.featured-left button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 22px 40px rgba(180,83,9,.35);
+
+}
+
+/* RIGHT SIDE */
+
+.featured-right{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:450px;
+
+}
+
+/* BIG CIRCLE */
+
+.circle.one{
+
+    width:340px;
+
+    height:340px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    #FFE6A8,
+    #FFF7E7
+    );
+
+    position:absolute;
+
+}
+
+/* MIDDLE */
+
+.circle.two{
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:#ECFDF5;
+
+    position:absolute;
+
+}
+
+/* INNER */
+
+.circle.three{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    background:white;
+
+    position:absolute;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.08);
+
+}
+
+/* ICON */
+
+.featured-icon{
+
+    position:absolute;
+
+    font-size:95px;
+
+    animation:floatIcon 3s ease-in-out infinite;
+
+}
+
+/* FLOAT */
+
+@keyframes floatIcon{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* =====================================================
+   PRACTICE LEVELS
+====================================================== */
+
+.levels{
+
+    width:90%;
+
+    max-width:1350px;
+
+    margin:100px auto;
+
+    text-align:center;
+
+}
+
+.levels h2{
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:50px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:15px;
+
+}
+
+.levels p{
+
+    color:#6B7280;
+
+    font-size:18px;
+
+    margin-bottom:55px;
+
+}
+
+/* GRID */
+
+.level-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+/* CARD */
+
+.level-card{
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:45px 35px;
+
+    border:1px solid #EFE5D4;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+}
+
+.level-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#F59E0B;
+
+    box-shadow:0 22px 50px rgba(217,119,6,.18);
+
+}
+
+.level-card h3{
+
+    font-family:"Poppins";
+
+    font-size:28px;
+
+    color:#222;
+
+    margin-bottom:15px;
+
+}
+
+.level-card p{
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.level-card button{
+
+    padding:14px 32px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:16px;
+
+    background:linear-gradient(
+    135deg,
+    #FBBF24,
+    #D97706,
+    #B45309
+    );
+
+    transition:.35s;
+
+}
+
+.level-card button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 35px rgba(217,119,6,.25);
+
+}
+
+/* =====================================================
+   DARK MODE
+====================================================== */
+
+body.dark{
+
+    background:#111827;
+
+}
+
+body.dark .categories-page{
+
+    background:#111827;
+
+}
+
+body.dark .categories-hero{
+
+    background:linear-gradient(
+    180deg,
+    #1F2937,
+    #111827
+    );
+
+}
+
+body.dark .categories-hero h1{
+
+    color:white;
+
+}
+
+body.dark .categories-hero p{
+
+    color:#D1D5DB;
+
+}
+
+body.dark .hero-tag{
+
+    background:#2D3748;
+
+    color:#FBBF24;
+
+}
+
+body.dark .category-card,
+body.dark .featured-category,
+body.dark .level-card{
+
+    background:#1F2937;
+
+    border:1px solid #374151;
+
+}
+
+body.dark .category-card h2,
+body.dark .featured-left h2,
+body.dark .levels h2,
+body.dark .level-card h3{
+
+    color:white;
+
+}
+
+body.dark .category-card p,
+body.dark .featured-left p,
+body.dark .level-card p,
+body.dark .levels p{
+
+    color:#D1D5DB;
+
+}
+
+body.dark .category-card span{
+
+    background:#2D3748;
+
+}
+
+body.dark .featured-left li{
+
+    color:white;
+
+}
+
+body.dark .circle.one{
+
+    background:#2D3748;
+
+}
+
+body.dark .circle.two{
+
+    background:#374151;
+
+}
+
+body.dark .circle.three{
+
+    background:#111827;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:1200px){
+
+.featured-category{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.featured-left ul{
+
+display:inline-block;
+
+text-align:left;
+
+}
+
+.featured-right{
+
+margin-top:30px;
+
+}
+
+.level-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.categories-hero{
+
+padding:70px 30px;
+
+}
+
+.categories-hero h1{
+
+font-size:46px;
+
+}
+
+.categories-hero p{
+
+font-size:18px;
+
+}
+
+.categories-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.level-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.categories-hero{
+
+padding:60px 20px;
+
+}
+
+.categories-hero h1{
+
+font-size:34px;
+
+}
+
+.categories-hero p{
+
+font-size:16px;
+
+line-height:1.7;
+
+}
+
+.categories-grid{
+
+grid-template-columns:1fr;
+
+padding:0 20px;
+
+}
+
+.category-card{
+
+padding:35px 25px;
+
+}
+
+.category-icon{
+
+width:85px;
+
+height:85px;
+
+font-size:34px;
+
+}
+
+.category-card h2{
+
+font-size:24px;
+
+}
+
+.featured-category{
+
+padding:35px 25px;
+
+margin:60px 20px;
+
+}
+
+.featured-left h2{
+
+font-size:34px;
+
+}
+
+.featured-left p{
+
+font-size:16px;
+
+}
+
+.featured-left li{
+
+font-size:16px;
+
+}
+
+.featured-right{
+
+height:300px;
+
+}
+
+.circle.one{
+
+width:220px;
+
+height:220px;
+
+}
+
+.circle.two{
+
+width:160px;
+
+height:160px;
+
+}
+
+.circle.three{
+
+width:100px;
+
+height:100px;
+
+}
+
+.featured-icon{
+
+font-size:70px;
+
+}
+
+.levels h2{
+
+font-size:34px;
+
+}
+
+.level-card{
+
+padding:35px 25px;
+
+}
+
+}

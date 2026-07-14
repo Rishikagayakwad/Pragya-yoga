@@ -1,0 +1,397 @@
+/* ===========================
+   ABOUT PAGE
+=========================== */
+
+.about-page{
+    width:100%;
+    background:var(--bg-color,#fdfbf7);
+    color:var(--text-color,#222);
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+.about-page section{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    padding:90px 0;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.about-hero{
+    text-align:center;
+}
+
+.about-hero h1{
+
+    font-size:60px;
+    font-weight:700;
+    color:#d78615;
+    margin-bottom:15px;
+
+}
+
+.about-hero h3{
+
+    font-size:32px;
+    color:#2f2f2f;
+    margin-bottom:20px;
+    font-weight:600;
+
+}
+
+.sanskrit{
+    font-family:"Playfair Display",serif;
+    font-size:20px;
+    font-weight:600;
+    color:#2d1b14;
+    margin-bottom:60px;
+}
+
+/* ===========================
+   ABOUT GRID
+=========================== */
+
+.about-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:50px;
+
+}
+
+.about-grid div{
+
+    background:#fff;
+    padding:45px;
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.about-grid div:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 25px 55px rgba(215,134,21,.15);
+
+}
+
+.about-grid h2{
+
+    color:#d78615;
+    font-size:34px;
+    margin-bottom:20px;
+
+}
+
+.about-grid p{
+
+    font-size:18px;
+    line-height:1.9;
+    color:#555;
+    margin-bottom:18px;
+
+}
+
+/* ===========================
+MISSION
+=========================== */
+
+.mission-section h1{
+
+    text-align:center;
+    font-size:52px;
+    color:#d78615;
+    margin-bottom:60px;
+
+}
+
+.mission-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+
+}
+
+.mission-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.mission-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 25px 55px rgba(215,134,21,.18);
+
+}
+
+.mission-card svg{
+
+    font-size:70px;
+    color:#d78615;
+    margin-bottom:25px;
+
+}
+
+.mission-card h2{
+
+    margin-bottom:18px;
+    font-size:34px;
+
+}
+
+.mission-card p{
+
+    line-height:1.8;
+    color:#666;
+    font-size:17px;
+
+}
+
+/* ===========================
+VALUES
+=========================== */
+
+.values-section{
+
+    text-align:center;
+
+}
+
+.values-section h1{
+
+    font-size:52px;
+    color:#d78615;
+    margin-bottom:60px;
+
+}
+
+.values-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+
+}
+
+.value-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:45px 35px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.value-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 25px 55px rgba(0,0,0,.12);
+
+}
+
+.value-card svg{
+
+    font-size:65px;
+
+    color:#7cb342;
+
+    margin-bottom:22px;
+
+}
+
+.value-card h3{
+
+    font-size:28px;
+
+    margin-bottom:18px;
+
+    color:#222;
+
+}
+
+.value-card p{
+
+    font-size:17px;
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+/* ===========================
+DARK MODE
+=========================== */
+
+body.dark .about-page{
+
+    background:#111827;
+    color:white;
+
+}
+
+body.dark .about-grid div,
+body.dark .mission-card,
+body.dark .value-card{
+
+    background:#1f2937;
+
+    color:white;
+
+    box-shadow:none;
+
+}
+
+body.dark .about-grid p,
+body.dark .mission-card p,
+body.dark .value-card p{
+
+    color:#d0d0d0;
+
+}
+
+body.dark .about-hero h3{
+
+    color:white;
+
+}
+
+body.dark .sanskrit{
+
+    color:#bdbdbd;
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+.about-grid,
+.mission-grid,
+.values-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.about-page section{
+
+padding:60px 20px;
+
+}
+
+.about-hero h1{
+
+font-size:42px;
+
+}
+
+.about-hero h3{
+
+font-size:24px;
+
+}
+
+.sanskrit{
+
+font-size:22px;
+
+margin-bottom:45px;
+
+}
+
+.about-grid,
+.mission-grid,
+.values-grid{
+
+grid-template-columns:1fr;
+
+gap:25px;
+
+}
+
+.about-grid div,
+.mission-card,
+.value-card{
+
+padding:30px;
+
+}
+
+.about-grid h2{
+
+font-size:28px;
+
+}
+
+.mission-section h1,
+.values-section h1{
+
+font-size:38px;
+
+}
+
+.mission-card h2{
+
+font-size:28px;
+
+}
+
+.value-card h3{
+
+font-size:24px;
+
+}
+
+.about-grid p,
+.mission-card p,
+.value-card p{
+
+font-size:16px;
+
+line-height:1.7;
+
+}
+
+}

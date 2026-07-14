@@ -3,9 +3,12 @@ import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useState } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const {darkMode,setDarkMode}=useTheme();
 
   return (
     <nav className="navbar">
@@ -38,9 +41,9 @@ function Navbar() {
         </li>
 
         <li>
-          <a href="#categories" onClick={() => setOpen(false)}>
-            Categories
-          </a>
+          <Link to="/categories">
+Categories
+</Link>
         </li>
 
         <li>
@@ -51,6 +54,14 @@ function Navbar() {
 
         
       </ul>
+      <button
+className="theme-btn"
+onClick={()=>setDarkMode(!darkMode)}
+>
+
+{darkMode ? <FaSun/> : <FaMoon/>}
+
+</button>
 
      <Link to="/login">
   <button className="login-btn">

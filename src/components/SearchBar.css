@@ -75,3 +75,32 @@ font-family:"Barmeno";
 background:none;
 
 }
+
+.search-page{
+    background:var(--bg);
+}
+
+.search-card{
+    background:var(--surface);
+}
+.search-box{
+
+background:white;
+
+border-radius:60px;
+
+padding:8px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.search-box:focus-within{
+
+transform:scale(1.02);
+
+box-shadow:0 20px 45px rgba(242,20,13,.18);
+
+}

@@ -1,66 +1,51 @@
 :root{
-
---primary:#F2140D;
---primary-dark:#BC0101;
-
---yellow:#FFF100;
---orange:#FDB431;
-
---background:#FFF8F3;
---surface:#FFFFFF;
-
---text:#2C2C2C;
---text-light:#666666;
-
---radius:18px;
-
---shadow:0 15px 35px rgba(0,0,0,.08);
-
---transition:.35s;
-
-}
-
-:root{
-
-  /* Logo Color Palette */
-
   --primary:#F2140D;
   --primary-dark:#BC0101;
-
   --secondary:#FDB431;
 
-  --accent:#FFF100;
+  --bg:#FFF8F3;
+  --surface:#FFFFFF;
+  --text:#222222;
+  --text-light:#666666;
+  --border:#E5E5E5;
+}
 
-  --background:#FFF8F3;
+body.dark{
+  --bg:#121212;
+  --surface:#1E1E1E;
+  --text:#FFFFFF;
+  --text-light:#CCCCCC;
+  --border:#333333;
+}
+.theme-btn{
 
-  --card:#FFFFFF;
+width:38px;
+height:38px;
 
-  --text:#2D2D2D;
+border:none;
+border-radius:50%;
 
-  --gray:#7D7D7D;
+background:#FDB431;
 
-  --border:#ECECEC;
+display:flex;
+align-items:center;
+justify-content:center;
 
-  --shadow:0 15px 35px rgba(0,0,0,.08);
+font-size:16px;
 
-  --radius:20px;
+cursor:pointer;
 
-  --transition:.35s ease;
+transition:.3s;
+
+margin-right:12px;
 
 }
 
-/* Dark Theme */
+.theme-btn:hover{
 
-.dark{
+transform:scale(1.08);
 
-  --background:#111111;
-
-  --card:#1E1E1E;
-
-  --text:#FFFFFF;
-
-  --gray:#BBBBBB;
-
-  --border:#333333;
+background:#F2140D;
+color:white;
 
 }

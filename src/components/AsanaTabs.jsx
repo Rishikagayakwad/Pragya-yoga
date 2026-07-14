@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./AsanaTabs.css";
+<<<<<<< HEAD
 
 // Day 5 deliverable: renders AI-generated content stored in Postgres.
 // - beginnerTips  -> new `beginner_tips` column (AI-generated, stored offline)
@@ -73,3 +74,65 @@ function AsanaTabs({ asana }) {
 }
 
 export default AsanaTabs;
+=======
+import { FaLeaf } from "react-icons/fa";
+import { GiLotus } from "react-icons/gi";
+import { MdHealthAndSafety } from "react-icons/md";
+export default function AsanaTabs() {
+  return (
+    <section className="asana-info-section">
+
+      {/* Benefits */}
+
+      <div className="info-card benefits">
+
+        <h2>🌿 Benefits</h2>
+
+        <ul>
+          <li>Improves posture</li>
+          <li>Increases flexibility</li>
+          <li>Enhances concentration</li>
+          <li>Reduces stress & anxiety</li>
+          <li>Promotes inner peace</li>
+          <li>Improves breathing</li>
+        </ul>
+
+      </div>
+
+      {/* Steps */}
+
+      <div className="info-card steps">
+
+        <h2>📋 Steps</h2>
+
+        <ol>
+          <li>Sit comfortably on the yoga mat.</li>
+          <li>Straighten your spine.</li>
+          <li>Fold the right leg.</li>
+          <li>Fold the left leg.</li>
+          <li>Place hands on knees.</li>
+          <li>Close eyes and breathe deeply.</li>
+        </ol>
+
+      </div>
+
+      {/* Precautions */}
+
+      <div className="info-card precautions">
+
+        <h2>⚠️ Precautions</h2>
+
+        <ul>
+          <li>Avoid if you have knee injuries.</li>
+          <li>Do not force your legs.</li>
+          <li>Use a yoga cushion if required.</li>
+          <li>Practice under supervision.</li>
+          <li>Stop immediately if pain occurs.</li>
+        </ul>
+
+      </div>
+
+    </section>
+  );
+}
+>>>>>>> 863bd3b (Updated project files)

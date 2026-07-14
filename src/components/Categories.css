@@ -65,3 +65,9 @@
 .category-card button:hover{
     background:orange;
 }
+
+.category-card{
+    background:var(--surface);
+    color:var(--text);
+    border:1px solid var(--border);
+}

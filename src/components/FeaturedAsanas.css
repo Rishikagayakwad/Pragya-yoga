@@ -67,3 +67,8 @@
 .card-content button:hover{
     background:orange;
 }
+
+.asana-card{
+    background:var(--surface);
+    color:var(--text);
+}

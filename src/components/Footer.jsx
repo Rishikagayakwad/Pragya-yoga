@@ -28,9 +28,10 @@ function Footer() {
         {/* Contact */}
         <div className="footer-contact">
           <h3>Contact</h3>
-          <p>📍 India</p>
-          <p>📧 support@pragyayoga.com</p>
-          <p>📞 +91 98765 43210</p>
+            <p>📞 +852 6708 2503</p>
+          <p>📧  info@pragyayogaverse.com</p>
+        
+           <p>📍1303-04, 13/F Tak Woo House, 1-3 Wo On Lane, Central, Hong Kong</p>
         </div>
 
       </div>

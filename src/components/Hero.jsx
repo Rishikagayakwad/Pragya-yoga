@@ -1,5 +1,8 @@
 import "./Hero.css";
 import heroImage from "../assets/hero.png";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 function Hero() {
   return (
@@ -26,9 +29,11 @@ function Hero() {
               Get Started
             </button>
 
-            <button className="btn-secondary">
-              Explore Asanas
-            </button>
+            <Link to="/asana">
+  <button className="btn-secondary">
+    Explore Asanas
+  </button>
+</Link>
 
           </div>
 
