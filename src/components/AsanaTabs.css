@@ -1,183 +1,133 @@
-.asana-info-section{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-margin:70px auto;
-
-width:90%;
-
-max-width:1400px;
-
+.asana-info-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 70px auto;
+  width: 90%;
+  max-width: 1400px;
 }
 
 /* Card */
-
-.info-card{
-
-background:#fff;
-
-padding:35px;
-
-border-radius:25px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-transition:.35s;
-
+.info-card {
+  background: #fff;
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+  transition: .35s;
 }
 
-.info-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 20px 45px rgba(0,0,0,.12);
-
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, .12);
 }
 
 /* Heading */
-
-.info-card h2{
-
-font-size:30px;
-
-margin-bottom:25px;
-
+.info-card h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
 }
 
 /* Different Colors */
-
-.benefits h2{
-
-color:#1E8E3E;
-
+.benefits h2 {
+  color: #1E8E3E;
 }
 
-.steps h2{
-
-color:#F59E0B;
-
+.steps h2 {
+  color: #F59E0B;
 }
 
-.precautions h2{
-
-color:#DC2626;
-
+.precautions h2 {
+  color: #DC2626;
 }
 
 /* Lists */
-
 .info-card ul,
-
-.info-card ol{
-
-padding-left:22px;
-
+.info-card ol {
+  padding-left: 22px;
 }
 
-.info-card li{
-
-font-size:17px;
-
-margin-bottom:16px;
-
-line-height:1.7;
-
-color:#444;
-
+.info-card li {
+  font-size: 17px;
+  margin-bottom: 16px;
+  line-height: 1.7;
+  color: #444;
 }
 
 /* Icons */
-
-.benefits li::marker{
-
-color:#1E8E3E;
-
+.benefits li::marker {
+  color: #1E8E3E;
 }
 
-.steps li::marker{
-
-color:#F59E0B;
-
-font-weight:bold;
-
+.steps li::marker {
+  color: #F59E0B;
+  font-weight: bold;
 }
 
-.precautions li::marker{
+.precautions li::marker {
+  color: #DC2626;
+}
 
-color:#DC2626;
+/* ---------- Tabs ---------- */
 
+.asana-tabs h2 {
+  color: #e69812;
+  margin-bottom: 20px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.tab-button {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid #e69812;
+  background: transparent;
+  color: #e69812;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.tab-button:hover {
+  background: #fdf1de;
+}
+
+.tab-button.active {
+  background: #e69812;
+  color: #fff;
+}
+
+.tab-panel {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.tab-text {
+  line-height: 1.7;
+  color: #333;
+}
+
+.tab-list {
+  list-style: disc;
+  padding-left: 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.tab-empty {
+  color: #888;
+  font-style: italic;
 }
 
 /* Responsive */
-
-@media(max-width:1100px){
-
-.asana-info-section{
-
-grid-template-columns:1fr;
-
+@media (max-width: 1100px) {
+  .asana-info-section {
+    grid-template-columns: 1fr;
+  }
 }
-
-<<<<<<< HEAD
-.asana-tabs h2{
-    color:#e69812;
-    margin-bottom:20px;
-}
-
-.tab-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-bottom:30px;
-}
-
-.tab-button{
-    padding:10px 22px;
-    border-radius:999px;
-    border:1px solid #e69812;
-    background:transparent;
-    color:#e69812;
-    font-weight:600;
-    cursor:pointer;
-    transition:background 0.2s ease, color 0.2s ease;
-}
-
-.tab-button:hover{
-    background:#fdf1de;
-}
-
-.tab-button.active{
-    background:#e69812;
-    color:#fff;
-}
-
-.tab-panel{
-    max-width:720px;
-    margin:0 auto;
-    text-align:left;
-}
-
-.tab-text{
-    line-height:1.7;
-    color:#333;
-}
-
-.tab-list{
-    list-style:disc;
-    padding-left:20px;
-    line-height:1.8;
-    color:#333;
-}
-
-.tab-empty{
-    color:#888;
-    font-style:italic;
-}
-=======
-}
->>>>>>> 863bd3b (Updated project files)
