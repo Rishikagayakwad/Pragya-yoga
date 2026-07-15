@@ -15,6 +15,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 
 function About() {
@@ -171,6 +172,34 @@ function About() {
               <FaPrayingHands />
               <h3>Spirituality</h3>
               <p>Connect with your inner self.</p>
+            </div>
+
+          </div>
+
+        </section>
+        {/* Credits */}
+
+        <section className="credits-section">
+
+          <h1>Credits & Attributions</h1>
+
+          <div className="credits-grid">
+
+            <div className="credit-card">
+              <h3>Yoga Tree Pose (3D Model)</h3>
+              <p>
+                Created by <strong>restore50</strong>, licensed under{" "}
+                <strong>CC-BY 4.0</strong>.
+              </p>
+              
+              <a
+                href="https://sketchfab.com/3d-models/yoga-tree-pose-fffeb53552154cf48bb042c04d66311a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="credit-link"
+              >
+                View source on Sketchfab <FaExternalLinkAlt />
+              </a>
             </div>
 
           </div>
