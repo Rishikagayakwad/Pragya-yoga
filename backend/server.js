@@ -22,8 +22,7 @@ app.get('/', (req, res) => {
 app.get('/api/asanas', async (req, res) => {
   try {
     const result = await pool.query(
-      'SELECT asana_id, sanskrit_name, english_name, difficulty, category_id FROM Asanas ORDER BY asana_id'
-    );
+'SELECT asana_id, sanskrit_name, english_name, difficulty, slug, duration, category_id FROM Asanas ORDER BY asana_id'    );
     res.json(result.rows);
   } catch (err) {
     console.error('Database query error:', err.message);
@@ -81,8 +80,7 @@ app.get('/api/categories/:id/asanas', async (req, res) => {
 app.get('/api/search', async (req, res) => {
   try {
     const { q, difficulty } = req.query;
-    let query = 'SELECT asana_id, sanskrit_name, english_name, difficulty, category_id FROM Asanas WHERE 1=1';
-    const params = [];
+let query = 'SELECT asana_id, sanskrit_name, english_name, difficulty, slug, duration, category_id FROM Asanas WHERE 1=1';    const params = [];
 
     if (q) {
       params.push(`%${q}%`);

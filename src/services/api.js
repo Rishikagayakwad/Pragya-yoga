@@ -28,5 +28,12 @@ export function getFeaturedAsanas() {
   return fetchJson("/asanas/featured");
 }
 
-// TODO: add getAllAsanas(), searchAsanas(), getAsanasByCategory() here
-// once Search/Categories are migrated off the static src/data/asanas.js file.
+// GET /api/asanas — full list of all asanas
+export function getAllAsanas() {
+  return fetchJson("/asanas");
+}
+
+// GET /api/search?q=... — search asanas by name
+export function searchAsanas(query) {
+  return fetchJson(`/search?q=${encodeURIComponent(query)}`);
+}
