@@ -4,13 +4,13 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function Categories() {
   const navigate = useNavigate();
 
   return (
     <>
-      <Navbar />
+      
 
       <div className="categories-page">
 

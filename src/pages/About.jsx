@@ -20,7 +20,7 @@ import {
 function About() {
   return (
     <>
-      <Navbar />
+     
 
       <div className="about-page">
 

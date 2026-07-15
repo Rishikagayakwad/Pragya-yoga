@@ -1,33 +1,39 @@
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
 import { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const {darkMode,setDarkMode}=useTheme();
+  const { darkMode, setDarkMode } = useTheme();
 
   return (
-    <nav className="navbar">
-      {/* Logo */}
-      <div className="logo">
-        <img src={logo} alt="Pragya Yoga Logo" />
-        <h2>Pragya Yoga Verse</h2>
+    <header className="navbar">
+
+      {/* LEFT */}
+      <div className="nav-left">
+
+        <button
+          className="mobile-menu"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <FiX /> : <FiMenu />}
+        </button>
+
+        <Link to="/" className="logo">
+          <img src={logo} alt="logo" />
+          <h2>Pragya Yoga Verse</h2>
+        </Link>
+
       </div>
 
-      {/* Mobile Menu Button */}
-      <div
-        className="menu-icon"
-        onClick={() => setOpen(!open)}
-      >
-        {open ? <FiX /> : <FiMenu />}
-      </div>
+      {/* CENTER */}
 
-      {/* Navigation */}
       <ul className={open ? "nav-links active" : "nav-links"}>
+
         <li>
           <Link to="/" onClick={() => setOpen(false)}>
             Home
@@ -41,9 +47,9 @@ function Navbar() {
         </li>
 
         <li>
-          <Link to="/categories">
-Categories
-</Link>
+          <Link to="/categories" onClick={() => setOpen(false)}>
+            Categories
+          </Link>
         </li>
 
         <li>
@@ -52,23 +58,28 @@ Categories
           </Link>
         </li>
 
-        
       </ul>
-      <button
-className="theme-btn"
-onClick={()=>setDarkMode(!darkMode)}
->
 
-{darkMode ? <FaSun/> : <FaMoon/>}
+      {/* RIGHT */}
 
-</button>
+      <div className="nav-right">
 
-     <Link to="/login">
-  <button className="login-btn">
-    Login
-  </button>
-</Link>
-    </nav>
+        <button
+          className="theme-btn"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
+
+        <Link to="/login">
+          <button className="login-btn">
+            Login
+          </button>
+        </Link>
+
+      </div>
+
+    </header>
   );
 }
 

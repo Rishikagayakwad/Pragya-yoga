@@ -73,3 +73,18 @@ ul{
 list-style:none;
 
 }
+
+.app{
+
+background:#fffdf8;
+color:#222;
+transition:.4s;
+
+}
+
+.app.dark{
+
+background:#111;
+color:#fff;
+
+}
