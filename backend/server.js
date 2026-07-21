@@ -66,8 +66,7 @@ app.get('/api/categories/:id/asanas', async (req, res) => {
   try {
     const { id } = req.params;
     const result = await pool.query(
-      'SELECT asana_id, sanskrit_name, english_name, difficulty FROM Asanas WHERE category_id = $1 ORDER BY asana_id',
-      [id]
+'SELECT asana_id, sanskrit_name, english_name, difficulty, slug, duration FROM Asanas WHERE category_id = $1 ORDER BY asana_id'      [id]
     );
     res.json(result.rows);
   } catch (err) {
