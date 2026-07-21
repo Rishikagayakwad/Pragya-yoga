@@ -1,70 +1,50 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { getAllCategories } from "../services/api";
 import "./Categories.css";
 
-function Categories() {
+const iconMap = {
+  Standing: "🧍",
+  Sitting: "🪑",
+  Balance: "⚖️",
+  Twisting: "🌀",
+  "Forward Bend": "🙇",
+  Meditative: "🪷",
+};
 
-  const categories = [
-    {
-      title: "Beginner",
-      icon: "🧘",
-      description: "Easy yoga poses for beginners"
-    },
-    {
-      title: "Standing",
-      icon: "🧍",
-      description: "Improve balance and strength"
-    },
-    {
-      title: "Meditation",
-      icon: "🪷",
-      description: "Relax your mind and body"
-    },
-    {
-      title: "Sitting",
-      icon: "🪑",
-      description: "Increase flexibility and posture"
-    },
-    {
-      title: "Balance",
-      icon: "⚖️",
-      description: "Build focus and stability"
-    },
-    {
-      title: "Backbend",
-      icon: "🌉",
-      description: "Improve spine flexibility"
-    }
-  ];
+function Categories() {
+  const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getAllCategories().then((data) => {
+      if (data) setCategories(data);
+    });
+  }, []);
 
   return (
     <section id="categories" className="categories">
       <h2>Explore Yoga Categories</h2>
 
-      <p>
-        Choose a category to begin your yoga journey.
-      </p>
+      <p>Choose a category to begin your yoga journey.</p>
 
       <div className="category-grid">
-
-        {categories.map((category, index) => (
-
-          <div className="category-card" key={index}>
-
+        {categories.map((category) => (
+          <div className="category-card" key={category.category_id}>
             <div className="icon">
-              {category.icon}
+              {iconMap[category.category_name] || "🧘"}
             </div>
 
-            <h3>{category.title}</h3>
+            <h3>{category.category_name}</h3>
 
             <p>{category.description}</p>
 
-            <button>Explore</button>
-
+            <button onClick={() => navigate(`/category/${category.category_id}`)}>
+              Explore
+            </button>
           </div>
-
         ))}
-
       </div>
-
     </section>
   );
 }
