@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 
 import Categories from "./pages/Categories";
+import CategoryAsanas from "./pages/CategoryAsanas";
 
 import AsanaDetails from "./pages/AsanaDetails";
 import { useTheme } from "./context/ThemeContext";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/search" element={<Search />} />
 
         <Route path="/categories" element={<Categories />} />
+        <Route path="/category/:id" element={<CategoryAsanas />} />
 
         <Route path="/about" element={<About />} />
 

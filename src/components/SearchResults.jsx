@@ -2,12 +2,12 @@ import { useNavigate } from "react-router-dom";
 import "./SearchResults.css";
 import lotus from "../assets/asanas/lotus.png";
 
-function SearchResults({ asanas }) {
+function SearchResults({ asanas, title = "Search Results" }) {
   const navigate = useNavigate();
 
   return (
     <section className="results">
-      <h2>Search Results</h2>
+  <h2>{title}</h2>
 
       <div className="results-grid">
         {asanas.map((asana) => (

@@ -37,3 +37,12 @@ export function getAllAsanas() {
 export function searchAsanas(query) {
   return fetchJson(`/search?q=${encodeURIComponent(query)}`);
 }
+// GET /api/categories — all categories
+export function getAllCategories() {
+  return fetchJson("/categories");
+}
+
+// GET /api/categories/:id/asanas — asanas filtered by category
+export function getCategoryAsanas(id) {
+  return fetchJson(`/categories/${id}/asanas`);
+}
