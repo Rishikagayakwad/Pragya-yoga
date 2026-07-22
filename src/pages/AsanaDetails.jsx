@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 import AsanaHero from "../components/AsanaHero";
@@ -11,14 +10,11 @@ import RelatedAsanas from "../components/RelatedAsanas";
 
 import { getAsanaBySlug } from "../services/api";
 
-// Day 5: fetches real data from the backend instead of the static
-// src/data/asanas.js file. Loading/error/not-found states are handled
-// explicitly since network requests can fail in ways a static import never did.
 function AsanaDetails() {
   const { id } = useParams();
 
   const [asana, setAsana] = useState(null);
-  const [status, setStatus] = useState("loading"); // "loading" | "ready" | "not-found" | "error"
+  const [status, setStatus] = useState("loading");
 
   useEffect(() => {
     let cancelled = false;
@@ -47,59 +43,39 @@ function AsanaDetails() {
 
   if (status === "loading") {
     return (
-      <>
-        <Navbar />
-        <div style={{ padding: "120px", textAlign: "center" }}>
-          <h1>Loading...</h1>
-        </div>
-        <Footer />
-      </>
+      <div style={{ padding: "120px", textAlign: "center" }}>
+        <h1>Loading...</h1>
+      </div>
     );
   }
 
   if (status === "not-found") {
     return (
-      <>
-        <Navbar />
-        <div style={{ padding: "120px", textAlign: "center" }}>
-          <h1>Asana Not Found</h1>
-        </div>
-        <Footer />
-      </>
+      <div style={{ padding: "120px", textAlign: "center" }}>
+        <h1>Asana Not Found</h1>
+      </div>
     );
   }
 
   if (status === "error") {
     return (
-      <>
-        <Navbar />
-        <div style={{ padding: "120px", textAlign: "center" }}>
-          <h1>Something went wrong</h1>
-          <p>Could not load this asana. Please check that the backend server is running.</p>
-        </div>
-        <Footer />
-      </>
+      <div style={{ padding: "120px", textAlign: "center" }}>
+        <h1>Something went wrong</h1>
+        <p>Could not load this asana. Please check that the backend server is running.</p>
+      </div>
     );
   }
 
   return (
     <>
-      <Navbar />
-
       <AsanaHero asana={asana} />
 
-     {/* Only Tree Pose has a real sourced model so far (Day 7). Every other
-          asana falls back to ModelViewer's default placeholder until more
-          per-asana models are sourced. */}
       <ModelViewer
         modelPath={asana.slug === "tree" ? "/models/tree-pose-real.glb" : undefined}
       />
 
       <AsanaTabs asana={asana} />
 
-      {/* RelatedAsanas is intentionally left on its existing hardcoded
-          content for now - out of scope for Day 5, to be migrated in the
-          Day 6 integration sprint. */}
       <RelatedAsanas current={asana.slug} />
 
       <Footer />
